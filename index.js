@@ -32,10 +32,16 @@ var numberOfButtons = document.querySelectorAll(".drum").length;
 for(var i = 0 ; i < numberOfButtons; i++){
     document.querySelectorAll(".drum")[i].addEventListener("click", function(){
         playSound(this.innerHTML);
-        
+        addAnimation(this.innerHTML);
 })}
 
 document.addEventListener("keypress", function(event){
     playSound(event.key);
-    
+    addAnimation(event.key);
 });
+
+function addAnimation(button){
+    var activeButton = document.querySelector("." + button);
+    activeButton.classList.add("pressed");
+    setTimeout(function(){activeButton.classList.remove("pressed") }, 200);
+}
