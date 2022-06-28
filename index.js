@@ -34,3 +34,8 @@ for(var i = 0 ; i < numberOfButtons; i++){
         playSound(this.innerHTML);
         
 })}
+
+document.addEventListener("keypress", function(event){
+    playSound(event.key);
+    
+});
